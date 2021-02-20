@@ -1,0 +1,3 @@
+## Modify /config/development.js, add db configuration
+## Also added empty .env file
+
