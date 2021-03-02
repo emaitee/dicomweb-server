@@ -14,7 +14,6 @@ module.exports = {
   maxConcurrent: process.env.MAXCONCURRENT || 5,
 };
 
-
 // module.exports = {
 //   env: 'development',
 //   dbServer: process.env.DB_SERVER || 'https://apikey-b94f74ff7c28442aaea3e237af417315:3708e6cc6a21090861876bbc9b7a7c8680b8d1b4@2f86aa75-0bb7-4cb3-8f64-3cdb30d93c8d-bluemix.cloudant.com',
@@ -30,7 +29,6 @@ module.exports = {
 //   },
 //   maxConcurrent: process.env.MAXCONCURRENT || 5,
 // };
-
 
 // module.exports = {
 //   env: 'development',

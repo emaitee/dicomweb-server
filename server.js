@@ -54,7 +54,7 @@ fastify.addSchema(instancesSchema);
 
 // enable cors
 fastify.register(require('fastify-cors'), {
-  origin: '*',
+  origin: /\.mylikita\.clinic$/,
 });
 
 // register CouchDB plugin we created
