@@ -5,6 +5,13 @@ Lightweight DICOMweb Server with CouchDB
 
 More background information can found in https://na-mic.github.io/ProjectWeek/PW30_2019_GranCanaria/Projects/DICOMweb-CouchDB/
 
+## Architecture
+
+The dicomweb-server is a fastify server that speaks DICOMweb to clients and fullfills their requests using CouchDB or other plugin services.
+![Overall design](image.png)
+
+## Authentification
+
 By default, the authentication is none and the application mode is development.
 You can change the authentication method by changing the auth attribute in config/development.js
 The value you put in should be the name of a json file in the config directory. A sample config for authentication should have the following information
@@ -15,6 +22,12 @@ The value you put in should be the name of a json file in the config directory. 
     "authServerUrl": "your-auth-server-port-and-port",
     "clientId": "your-client-id",
     "clientSecret": "your-secret"
+}`
+
+If using the default authentication of couchdb with an admin account, you will need to specify the admin username and password in config/development.js in the below style:
+
+`{
+    dbServer: process.env.DB_SERVER || 'http://username:password@localhost'
 }`
 
 
@@ -60,7 +73,7 @@ Store a DATA_DIRECTORY of DICOM image files (here with the ".IMA" extension).  A
 
 ## Use with a viewer
 
-It's possible to use this server as a backend to the [OHIF Viewer](http://ohif.org) using a configuration like this.
+It's possible to use this server as a backend to the [OHIF Viewer](http://ohif.org) using a configuration like this. (See [this file](https://github.com/OHIF/Viewers/blob/master/platform/viewer/public/config/default.js#L1-L31)).
 
 ```
      const dicomweb_serverConfig = {
