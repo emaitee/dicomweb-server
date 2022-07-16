@@ -1,6 +1,6 @@
 module.exports = {
   env: 'development',
-  dbServer: process.env.DB_SERVER || 'http://admin:Bits_123@http://162.240.6.103',
+  dbServer: process.env.DB_SERVER || 'http://admin:Bits_123@162.240.6.103',
   db: process.env.DB_NAME || 'chronicle',
   dbPort: process.env.DB_PORT || 5984,
   prefix: process.env.PREFIX || '',
