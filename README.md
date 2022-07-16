@@ -64,11 +64,11 @@ We test with a Python implementation [dicomweb_client](https://github.com/clinda
 
 Get study list:
 
-`dicomweb_client --url http://localhost:5985 search studies`
+`dicomweb_client --url http://localhost:5986 search studies`
 
 Store a DATA_DIRECTORY of DICOM image files (here with the ".IMA" extension).  Adjust the command line to match the location and naming of your files.  (The `-n25` option to xargs is for batching files, leading to fewer calls and thus less overhead.)
 
-`find DATA_DIRECTORY -iname \*.IMA -print0 | xargs -0 -n25 dicomweb_client --url http://localhost:5985 store instances`
+`find DATA_DIRECTORY -iname \*.IMA -print0 | xargs -0 -n25 dicomweb_client --url http://localhost:5986 store instances`
 
 
 ## Use with a viewer
@@ -83,9 +83,9 @@ It's possible to use this server as a backend to the [OHIF Viewer](http://ohif.o
           "dicomWeb": [
             {
               "name": "dicomweb_server",
-              "wadoUriRoot": "http://localhost:5985",
-              "qidoRoot": "http://localhost:5985",
-              "wadoRoot": "http://localhost:5985",
+              "wadoUriRoot": "http://localhost:5986",
+              "qidoRoot": "http://localhost:5986",
+              "wadoRoot": "http://localhost:5986",
               "qidoSupportsIncludeField": true,
               "imageRendering": "wadouri",
               "thumbnailRendering": "wadors",

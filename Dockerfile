@@ -1,7 +1,7 @@
 # docker build -t ohif/dicomweb-server:latest .
-# docker run -p 5985:5985 ohif/dicomweb-server:latest
+# docker run -p 5986:5986 ohif/dicomweb-server:latest
 # If you want to use PouchDB in this container, add -p 5984:5984
-# docker run -p 5985:5985 -p 5984:5984 -e USE_POUCHDB=true -e DB_SERVER=http://0.0.0.0 ohif/dicomweb-server:latest
+# docker run -p 5986:5986 -p 5984:5984 -e USE_POUCHDB=true -e DB_SERVER=http://0.0.0.0 ohif/dicomweb-server:latest
 FROM node:13.10.1-slim
 
 # Install prerequisites
@@ -20,5 +20,5 @@ RUN npm install pouchdb-server@4.2.0
 
 ENV USE_POUCHDB=false
 
-EXPOSE 5984 5985
+EXPOSE 5984 5986
 CMD ["supervisord", "-n", "-c", "/home/node/app/dockersupport/supervisord.conf"]

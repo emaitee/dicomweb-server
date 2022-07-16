@@ -31,7 +31,7 @@ const { InternalError, ResourceNotFoundError } = require('./utils/Errors');
 
 fastify.addContentTypeParser('*', (req, done) => {
   let data = [];
-  req.on('data', chunk => {
+  req.on('data', (chunk) => {
     data.push(chunk);
   });
   req.on('end', () => {
@@ -174,7 +174,7 @@ dbPq.on('active', () => {
 });
 fastify.decorate('dbPqueue', dbPq);
 
-const port = process.env.port || '5985';
+const port = process.env.port || '5986';
 const host = process.env.host || '0.0.0.0';
 // Run the server!
 fastify.listen(port, host);

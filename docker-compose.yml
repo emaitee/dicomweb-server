@@ -17,7 +17,7 @@ services:
       - PORT=5984
       - DB_SERVER=http://couchdb
     ports:
-      - '5985:5985'
+      - '5986:5986'
     depends_on:
       - couchdb
     restart: unless-stopped
